@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/welcome2"/>
+        android:src="@drawable/welcome"/>
 
     <TextView
         android:id="@+id/splash__status_label"

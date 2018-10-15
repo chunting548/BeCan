@@ -204,7 +204,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/rg_dp" />
+                            android:src="@drawable/erea_button" />
 
                     </LinearLayout>
 
@@ -346,9 +346,9 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
-                            android:text="ROUTE TO PLACE"
+                            android:text="導航至此地點"
                             android:textAlignment="textStart"
-                            android:textColor="@color/defaultColour"
+                            android:textColor="#ff47aad1"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
