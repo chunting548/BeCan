@@ -38,7 +38,7 @@ import com.navigine.naviginesdk.*;
 public class MainActivity extends AppCompatActivity
 {
   private static final String   TAG                     = "BeCanLibrary";
-  private static final String   NOTIFICATION_CHANNEL    = "BEACONLIBRARY_NOTIFICATION_CHANNEL";
+  private static final String   NOTIFICATION_CHANNEL    = "BEACANLIBRARY_NOTIFICATION_CHANNEL";
   private static final int      UPDATE_TIMEOUT          = 100;  // milliseconds
   private static final int      ADJUST_TIMEOUT          = 5000; // milliseconds
   private static final int      ERROR_MESSAGE_TIMEOUT   = 5000; // milliseconds
@@ -449,6 +449,7 @@ public class MainActivity extends AppCompatActivity
       notificationBuilder.setContentIntent(PendingIntent.getActivity(this, z.id, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT));
       notificationBuilder.setContentTitle("新區域");
       notificationBuilder.setContentText("您已進入區域「" + z.name + "」");
+      notificationBuilder.setSmallIcon(R.drawable.becan_logo);
       notificationBuilder.setAutoCancel(true);
 
       // Posting a notification
@@ -609,7 +610,7 @@ public class MainActivity extends AppCompatActivity
     
     mAdjustTime = 0;
     mCurrentSubLocationIndex = index;
-    mCurrentFloorLabel.setText(String.format(Locale.ENGLISH, "%d", mCurrentSubLocationIndex));
+    mCurrentFloorLabel.setText(String.format(Locale.ENGLISH, "%d", mCurrentSubLocationIndex + 1));
     
     if (mCurrentSubLocationIndex > 0)
     {
