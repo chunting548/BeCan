@@ -36,7 +36,7 @@ import static java.lang.Math.round;
 
 public class AdjustActivity extends AppCompatActivity {
 
-    final private int default_RSSI_value = -81;
+    final private int default_RSSI_value = -65;
     public float parameter_RSSI=1;
     private ProximityManager proximityManager;
     private TextView difference_distance = null;
@@ -91,7 +91,6 @@ public class AdjustActivity extends AppCompatActivity {
                 .activityCheckConfiguration(ActivityCheckConfiguration.DEFAULT)
                 .deviceUpdateCallbackInterval(TimeUnit.SECONDS.toMillis(5));
     }
-
     public void startOnClick(View view) {
         final Toast toast_Wait = Toast.makeText(this, "請維持裝置固定不動約3秒", Toast.LENGTH_SHORT);
         final Toast toast_Done = Toast.makeText(this, "校正完成！請回到導航畫面。", Toast.LENGTH_LONG);
