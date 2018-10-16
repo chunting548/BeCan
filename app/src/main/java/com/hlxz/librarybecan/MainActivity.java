@@ -267,11 +267,13 @@ public class MainActivity extends AppCompatActivity
             int pid[] = data.getExtras().getIntArray("Pid");
             float pxy[] = data.getExtras().getFloatArray("Pxy");
             mNavigation.setTarget(new LocationPoint(pid[0],pid[1],pxy[0],pxy[1]));
-           // mTargetVenue = mSelectedVenue;
+            mTargetVenue = mSelectedVenue;
+            //mTargetVenue = mSelectedVenue;
             //mTargetPoint = null;
             //mNavigation.setTarget(new LocationPoint(mLocation.id, subLoc2.id, mTargetVenue.x, mTargetVenue.y));
             mBackView.setVisibility(View.VISIBLE);
-            onCancelRoute(mBackView);
+            //onCancelRoute(mBackView);
+
           }
         }
     }
@@ -324,6 +326,7 @@ public class MainActivity extends AppCompatActivity
   {
     mLocationView.zoomBy(0.8f);
   }
+
   public void onShowVenue(View v) {
     if (this.mMenuVisible) {
       Log.d("MessageABC", "error");
