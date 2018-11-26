@@ -44,6 +44,9 @@
         <activity android:name=".TutorialActivity"></activity>
         <activity android:name=".FunctionActivity"></activity>
         <activity android:name=".VenueActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".areasearch" />
+        <activity android:name=".booksearch"></activity>
         <meta-data
             android:name="kontakt.io.API_KEY"
             android:value="@string/kontakt_io_api_key" />

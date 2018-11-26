@@ -10,100 +10,27 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <WebView
+            android:id="@+id/web_library"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5">
+            android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/circulation_history"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_book_reader"
-                android:onClick="library"
-                android:text="借閱清單"
-                android:visibility="visible"
-                app:layout_constraintBottom_toTopOf="@+id/events_signup"
-                app:layout_constraintEnd_toStartOf="@+id/tools_reservation"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/room_reservation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_chalkboard_teacher"
-                android:fontFamily="sans-serif"
-                android:onClick="library"
-                android:text="閱覽室預約"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/events_signup"
-                app:layout_constraintTop_toBottomOf="@+id/tools_reservation" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/events_signup"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/circulation_history"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_user_plus"
-                android:onClick="signup"
-                android:text="活動報名"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/room_reservation"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/circulation_history" />
-
-            <Button
-                android:id="@+id/tools_reservation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/room_reservation"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_screwdriver"
-                android:onClick="library"
-                android:text="器材預約"
-                android:visibility="visible"
-                app:layout_constraintBottom_toTopOf="@+id/room_reservation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/circulation_history"
-                app:layout_constraintTop_toTopOf="parent" />
-        </LinearLayout>
     </LinearLayout>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/whiteColour"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

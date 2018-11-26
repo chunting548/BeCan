@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1039715146073",
+    "firebase_url": "https://book-6da0c.firebaseio.com",
+    "project_id": "book-6da0c",
+    "storage_bucket": "book-6da0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039715146073:android:1eb717d4403a69df",
+        "android_client_info": {
+          "package_name": "com.hlxz.librarybecan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039715146073-ih84hkrefo39eolj4nc0ssi0bqq268ud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCae0s_Ad49-PccBiRRVlyPAXfz2kNND5Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -19,7 +19,7 @@ public class TutorialActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
+        MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -27,6 +27,10 @@ public class TutorialActivity extends AppCompatActivity {
                     case R.id.navigation_navigation:
                         Intent intent_navigation = new Intent(TutorialActivity.this, MainActivity.class);
                         startActivity(intent_navigation);
+                        break;
+                    case R.id.navigation_search:
+                        Intent intent_search = new Intent(TutorialActivity.this, SearchActivity.class);
+                        startActivity(intent_search);
                         break;
                     case R.id.navigation_tutorial:
                         break;

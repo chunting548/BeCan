@@ -50,7 +50,7 @@ public class AdjustActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(3);
+        MenuItem menuItem = menu.getItem(4);
         menuItem.setChecked(true);
         difference_distance = (TextView)findViewById(R.id.fix_distance_difference_value);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -63,6 +63,10 @@ public class AdjustActivity extends AppCompatActivity {
                             setResult(2,intent_navigation);
                         }
                             startActivity(intent_navigation);
+                        break;
+                    case R.id.navigation_search:
+                        Intent intent_search = new Intent(AdjustActivity.this, SearchActivity.class);
+                        startActivity(intent_search);
                         break;
                     case R.id.navigation_tutorial:
                         Intent intent_tutorial = new Intent(AdjustActivity.this, TutorialActivity.class);

@@ -2,20 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_navigation"
-        android:icon="@drawable/ic_directions"
-        android:title="@string/title_navigation" />
+        android:icon="@drawable/ic_navigation"
+        android:title=" " />
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_search"
+        android:title=" " />
     <item
         android:id="@+id/navigation_tutorial"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_tutorial" />
+        android:icon="@drawable/ic_tutorial"
+        android:title=" " />
     <item
         android:id="@+id/navigation_function"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_function" />
-
+        android:icon="@drawable/ic_library"
+        android:title=" " />
     <item
         android:id="@+id/navigation_adjust"
-        android:icon="@drawable/ic_build_black_24dp"
-        android:title="@string/title_adjust" />
+        android:icon="@drawable/ic_callibration"
+        android:title=" " />
 
 </menu>

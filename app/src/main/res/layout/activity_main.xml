@@ -6,16 +6,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#14273D">
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/whiteColour"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_container"
         app:menu="@menu/navigation" />
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -61,7 +64,7 @@
             android:layout_gravity="top|left"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="50dp"
-            android:background="#90aaaaaa"
+            android:background="@android:color/transparent"
             android:onClick="onCancelRoute"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -95,20 +98,20 @@
             android:layout_marginBottom="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="90dp"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <!-- Previous floor button -->
             <FrameLayout
                 android:id="@+id/navigation__prev_floor_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#90aaaaaa">
+                android:background="@drawable/zoom_button_circular" >
 
                 <Button
                     android:id="@+id/navigation__prev_floor_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/prev_floor"
+                    android:background="@drawable/ic_up"
                     android:onClick="onPrevFloor" />
             </FrameLayout>
 
@@ -117,7 +120,7 @@
                 android:id="@+id/navigation__current_floor_label"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#90dddddd"
+                android:background="@android:color/transparent"
                 android:gravity="center"
                 android:textColor="#000000"
                 android:textSize="20dp" />
@@ -127,13 +130,13 @@
                 android:id="@+id/navigation__next_floor_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#90aaaaaa">
+                android:background="@drawable/zoom_button_circular" >
 
                 <Button
                     android:id="@+id/navigation__next_floor_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/next_floor"
+                    android:background="@drawable/ic_down_icon"
                     android:onClick="onNextFloor" />
             </FrameLayout>
 
@@ -148,13 +151,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/zoom_button_circular">
-                <!--android:background="#90aaaaaa">-->
 
                 <Button
                     android:id="@+id/navigation__zoom_in_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/zoom_in"
+                    android:background="@drawable/ic_plus"
                     android:onClick="onZoomIn" />
             </FrameLayout>
 
@@ -167,13 +169,13 @@
                 android:id="@+id/navigation__zoom_out_view"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/zoom_button_circular">
+                android:background="@drawable/zoom_button_circular" >
 
                 <Button
                     android:id="@+id/navigation__zoom_out_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/zoom_out"
+                    android:background="@drawable/ic_minus"
                     android:onClick="onZoomOut" />
             </FrameLayout>
 
@@ -185,13 +187,13 @@
                 android:id="@+id/navigation__adjust_mode_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/zoom_button_circular">
+                android:background="@drawable/zoom_button_circular" >
 
                 <Button
                     android:id="@+id/navigation__adjust_mode_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/navigation_touch"
+                    android:background="@drawable/ic_focus_icon_2"
                     android:onClick="toggleAdjustMode" />
             </FrameLayout>
 

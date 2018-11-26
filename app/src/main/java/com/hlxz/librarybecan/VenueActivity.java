@@ -69,10 +69,12 @@ public class VenueActivity extends Activity {
     }
 
     public void onBackPressed() {
+        sendCancelRoute();
         finish();
     }
 
     public void onBackButtonClicked(View v) {
+        sendCancelRoute();
         finish();
     }
 
@@ -85,5 +87,11 @@ public class VenueActivity extends Activity {
             setResult(-1, extra);
         }
         finish();
+    }
+    public void sendCancelRoute(){
+        Intent intent = new Intent();
+        intent.putExtra("bool",true);
+        setResult(-2,intent);
+
     }
 }

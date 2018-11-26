@@ -43,7 +43,7 @@ public class NotificationActivity extends Activity
     mTextLabel  = (TextView)findViewById(R.id.notification__text_label);
 
     mTitleLabel.setText(mName);
-    mTextLabel.setText("已經進入區域「" + mName + "」"+mId+"OOOOO"+mUuid);
+    mTextLabel.setText("已經進入區域「" + mName + "」");
   }
   
   public void onClose(View v)

@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
   private Context       mContext                  = this;
   private Venue         mVenue                    = null;
 
+  private Button        mOnBackButton             = null;
   // Location parameters
   private Location      mLocation                 = null;
   private int           mCurrentSubLocationIndex  = -1;
@@ -116,6 +117,10 @@ public class MainActivity extends AppCompatActivity
             switch (item.getItemId()){
                 case R.id.navigation_navigation:
                     break;
+                case R.id.navigation_search:
+                     Intent intent_search = new Intent(MainActivity.this, SearchActivity.class);
+                     startActivity(intent_search);
+                     break;
                 case R.id.navigation_tutorial:
                     Intent intent_tutorial = new Intent(MainActivity.this, TutorialActivity.class);
                     startActivity(intent_tutorial);
@@ -152,6 +157,8 @@ public class MainActivity extends AppCompatActivity
     mZoomOutView = (View)findViewById(R.id.navigation__zoom_out_view);
     mAdjustModeView = (View)findViewById(R.id.navigation__adjust_mode_view);
     mErrorMessageLabel = (TextView)findViewById(R.id.navigation__error_message_label);
+
+    mOnBackButton = (Button)findViewById(R.id.navigation__back_button);
 
     mBackView.setVisibility(View.INVISIBLE);
     mPrevFloorView.setVisibility(View.INVISIBLE);
@@ -259,21 +266,29 @@ public class MainActivity extends AppCompatActivity
                 parameter_RSSI = data.getExtras().getInt("P");
             }
         }
+        if(resultCode == -2){
+          if(requestCode == 3){
+            onCancelRoute(mOnBackButton);
+          }
+        }
         if(resultCode == -1)
         {
           if(requestCode == 3)
           {
+            /*
             Log.d("Yeeeeeeeeeee?","1"+data.getExtras().getBoolean("venue_id"));
             int pid[] = data.getExtras().getIntArray("Pid");
             float pxy[] = data.getExtras().getFloatArray("Pxy");
-            mNavigation.setTarget(new LocationPoint(pid[0],pid[1],pxy[0],pxy[1]));
+            mSelectedVenue = getVenueAt(pxy[0],pxy[1]);
             mTargetVenue = mSelectedVenue;
-            //mTargetVenue = mSelectedVenue;
-            //mTargetPoint = null;
-            //mNavigation.setTarget(new LocationPoint(mLocation.id, subLoc2.id, mTargetVenue.x, mTargetVenue.y));
+            mTargetPoint = null;
+            mNavigation.setTarget(new LocationPoint(pid[0],pid[1],pxy[0],pxy[1]));
             mBackView.setVisibility(View.VISIBLE);
+            //Log.d("debug", ""+mBackView.getVisibility());
+            //mTargetVenue = mSelectedVenue;
+            //mNavigation.setTarget(new LocationPoint(mLocation.id, subLoc2.id, mTargetVenue.x, mTargetVenue.y));
             //onCancelRoute(mBackView);
-
+            */
           }
         }
     }
@@ -300,8 +315,8 @@ public class MainActivity extends AppCompatActivity
     mAdjustTime = 0;
     Button adjustModeButton = (Button)findViewById(R.id.navigation__adjust_mode_button);
     adjustModeButton.setBackgroundResource(mAdjustMode ?
-                                           R.drawable.navigation_touch :
-                                           R.drawable.navigation_action);
+                                           R.drawable.ic_focus_icon_1 :
+                                           R.drawable.ic_focus_icon_2);
     mLocationView.redraw();
   }
 
@@ -352,7 +367,7 @@ public class MainActivity extends AppCompatActivity
     mPinPointRect = null;
 
     mNavigation.cancelTargets();
-    mBackView.setVisibility(View.GONE);
+    mBackView.setVisibility(View.INVISIBLE);
     mLocationView.redraw();
   }
 
@@ -390,14 +405,19 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG, "按第二次");
         //Bundle b = new Bundle();
         //b.putInt("venue_id", mPinVenue.id);
-        int Pid[] = {mLocation.id, subLoc.id };
-        float Pxy[] = {mSelectedVenue.x, mSelectedVenue.y};
+
+        //int Pid[] = {mLocation.id, subLoc.id };
+        //float Pxy[] = {mSelectedVenue.x, mSelectedVenue.y};
         Intent intent = new Intent(mContext, VenueActivity.class);
         intent.putExtra("venue_id",mSelectedVenue.id);
-        intent.putExtra("Pid",Pid);
-        intent.putExtra("Pxy",Pxy);
+        //intent.putExtra("Pid",Pid);
+        //intent.putExtra("Pxy",Pxy);
         startActivityForResult(intent, 3);
-        mPinVenue = null;
+        mTargetVenue = mSelectedVenue;
+        mTargetPoint = null;
+        mNavigation.setTarget(new LocationPoint(mLocation.id, subLoc.id, mTargetVenue.x, mTargetVenue.y));
+        mBackView.setVisibility(View.VISIBLE);
+
       }
       cancelVenue();
       return;
@@ -475,6 +495,7 @@ public class MainActivity extends AppCompatActivity
   private void handleDeviceUpdate(DeviceInfo deviceInfo)
   {
     mDeviceInfo = deviceInfo;
+
     if (mDeviceInfo == null)
       return;
     
@@ -492,6 +513,7 @@ public class MainActivity extends AppCompatActivity
     }
     else
     {
+
       mBackView.setVisibility(View.GONE);
       switch (mDeviceInfo.errorCode)
       {
@@ -619,23 +641,23 @@ public class MainActivity extends AppCompatActivity
     if (mCurrentSubLocationIndex > 0)
     {
       mPrevFloorButton.setEnabled(true);
-      mPrevFloorView.setBackgroundColor(Color.parseColor("#90aaaaaa"));
+      //mPrevFloorView.setBackgroundColor(Color.parseColor("@android:color/transparent" ));
     }
     else
     {
       mPrevFloorButton.setEnabled(false);
-      mPrevFloorView.setBackgroundColor(Color.parseColor("#90dddddd"));
+      //mPrevFloorView.setBackgroundColor(Color.parseColor("@android:color/transparent" ));
     }
     
     if (mCurrentSubLocationIndex + 1 < mLocation.subLocations.size())
     {
       mNextFloorButton.setEnabled(true);
-      mNextFloorView.setBackgroundColor(Color.parseColor("#90aaaaaa"));
+      //mNextFloorView.setBackgroundColor(Color.parseColor("@android:color/transparent" ));
     }
     else
     {
       mNextFloorButton.setEnabled(false);
-      mNextFloorView.setBackgroundColor(Color.parseColor("#90dddddd"));
+      //mNextFloorView.setBackgroundColor(Color.parseColor("@android:color/transparent" ));
     }
     
     cancelVenue();
