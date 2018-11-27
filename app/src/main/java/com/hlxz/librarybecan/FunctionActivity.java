@@ -53,26 +53,31 @@ public class FunctionActivity extends AppCompatActivity {
                     case R.id.navigation_navigation:
                         Intent intent_navigation = new Intent(FunctionActivity.this, MainActivity.class);
                         startActivity(intent_navigation);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_search:
                         Intent intent_search = new Intent(FunctionActivity.this, SearchActivity.class);
                         startActivity(intent_search);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_tutorial:
                         Intent intent_tutorial = new Intent(FunctionActivity.this, TutorialActivity.class);
                         startActivity(intent_tutorial);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_function:
                         break;
                     case R.id.navigation_adjust:
                         Intent intent_adjust = new Intent(FunctionActivity.this, AdjustActivity.class);
                         startActivity(intent_adjust);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                 }
                 return false;
             }
         });
     }
+
     public void library(View view){
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://webpac.lib.pu.edu.tw/webpac/webpacIndex.jsp"));
         startActivity(browserIntent);

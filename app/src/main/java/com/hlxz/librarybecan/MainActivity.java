@@ -120,18 +120,22 @@ public class MainActivity extends AppCompatActivity
                 case R.id.navigation_search:
                      Intent intent_search = new Intent(MainActivity.this, SearchActivity.class);
                      startActivity(intent_search);
+                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                      break;
                 case R.id.navigation_tutorial:
                     Intent intent_tutorial = new Intent(MainActivity.this, TutorialActivity.class);
                     startActivity(intent_tutorial);
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     break;
                 case R.id.navigation_function:
                     Intent intent_function = new Intent(MainActivity.this, FunctionActivity.class);
                     startActivity(intent_function);
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     break;
                 case R.id.navigation_adjust:
                     Intent intent_adjust = new Intent(MainActivity.this, AdjustActivity.class);
                     startActivityForResult(intent_adjust,5);
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     break;
             }
             return false;
@@ -169,7 +173,7 @@ public class MainActivity extends AppCompatActivity
     mAdjustModeView.setVisibility(View.INVISIBLE);
     mErrorMessageLabel.setVisibility(View.GONE);
     
-    mVenueBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.navigation70_65);
+    mVenueBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.area_icon);
     
     // Initializing location view
     mLocationView = (LocationView)findViewById(R.id.navigation__location_view);
