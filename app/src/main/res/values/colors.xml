@@ -7,5 +7,6 @@
     <color name="defaultColour">#000000</color>
     <color name="whiteColour">#FFFFFF</color>>
     <color name="colorBecanIconBG">#f7eda7</color>
+    <color name="colorMarkIcon">#002639</color>
     <color name="green">#00FF00</color>
 </resources>

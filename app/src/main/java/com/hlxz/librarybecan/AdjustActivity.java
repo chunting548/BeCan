@@ -62,19 +62,23 @@ public class AdjustActivity extends AppCompatActivity {
                             intent_navigation.putExtra("P",parameter_RSSI);
                             setResult(2,intent_navigation);
                         }
-                            startActivity(intent_navigation);
+                        startActivity(intent_navigation);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_search:
                         Intent intent_search = new Intent(AdjustActivity.this, SearchActivity.class);
                         startActivity(intent_search);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_tutorial:
                         Intent intent_tutorial = new Intent(AdjustActivity.this, TutorialActivity.class);
                         startActivity(intent_tutorial);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_function:
                         Intent intent_function = new Intent(AdjustActivity.this, FunctionActivity.class);
                         startActivity(intent_function);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_adjust:
                         break;
