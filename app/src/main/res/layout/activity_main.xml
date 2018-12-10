@@ -111,7 +111,7 @@
                     android:id="@+id/navigation__prev_floor_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/ic_up"
+                    android:background="@drawable/ic_down_icon"
                     android:onClick="onPrevFloor" />
             </FrameLayout>
 
@@ -136,7 +136,7 @@
                     android:id="@+id/navigation__next_floor_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/ic_down_icon"
+                    android:background="@drawable/ic_up"
                     android:onClick="onNextFloor" />
             </FrameLayout>
 

@@ -44,6 +44,8 @@ public class booksearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booksearch);
 
+
+
         /*ListView listView = (ListView) findViewById(R.id.list);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,

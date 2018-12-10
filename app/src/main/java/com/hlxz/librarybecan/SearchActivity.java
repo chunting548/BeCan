@@ -31,20 +31,24 @@ public class SearchActivity extends AppCompatActivity {
                     case R.id.navigation_navigation:
                         Intent intent_navigation = new Intent(SearchActivity.this, MainActivity.class);
                         startActivity(intent_navigation);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_search:
                         break;
                     case R.id.navigation_tutorial:
                         Intent intent_tutorial = new Intent(SearchActivity.this, TutorialActivity.class);
                         startActivity(intent_tutorial);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_function:
                         Intent intent_function = new Intent(SearchActivity.this, FunctionActivity.class);
                         startActivity(intent_function);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                     case R.id.navigation_adjust:
                         Intent intent_adjust = new Intent(SearchActivity.this, AdjustActivity.class);
                         startActivity(intent_adjust);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         break;
                 }
                 return false;

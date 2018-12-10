@@ -176,7 +176,7 @@
                         <ImageView
                             android:layout_width="34dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/navigation" />
+                            android:src="@drawable/erea_icon" />
 
                     </LinearLayout>
 
@@ -303,7 +303,7 @@
                             android:layout_width="34dp"
                             android:layout_height="match_parent"
                             android:contentDescription="beacon_icon"
-                            android:src="@drawable/navigation" />
+                            android:src="@drawable/erea_icon" />
 
                     </LinearLayout>
 

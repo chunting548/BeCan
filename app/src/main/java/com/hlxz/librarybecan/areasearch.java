@@ -22,6 +22,7 @@ public class areasearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_areasearch);
 
+
         sv = (SearchView) findViewById(R.id.searchView);
         lv = (ListView) findViewById(R.id.listView);
 
